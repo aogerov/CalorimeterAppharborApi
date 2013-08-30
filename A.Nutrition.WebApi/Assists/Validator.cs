@@ -29,8 +29,8 @@ namespace A.Nutrition.WebApi.Assists
                 throw new InvalidOperationException("Keyword has to be at least 3 chars long");
             }
 
-            var keywordInDb = context.Descriptions.FirstOrDefault(d => d.KeyWord.ToLower().Trim() == keyword.ToLower().Trim());
-            
+            string keywordToLower = keyword.ToLower();
+            var keywordInDb = context.Descriptions.FirstOrDefault(d => d.KeyWord == keywordToLower);
             if (keywordInDb == null)
             {
                 throw new ArgumentNullException("Keyword don't exists in database");

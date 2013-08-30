@@ -12,7 +12,7 @@ namespace A.Nutrition.WebApi.Assists
             var model = new ProductsByKeywordModel();
 
             model.Id = keywordEntity.DescriptionId;
-            model.Keyword = keywordEntity.KeyWord.ToLower().Trim();
+            model.Keyword = keywordEntity.KeyWord;
             foreach (var product in keywordEntity.Products)
             {
                 var productModel = ParseProduct(product);
@@ -27,7 +27,7 @@ namespace A.Nutrition.WebApi.Assists
             var model = new ProductModel
             {
                 Id = productEntity.ProductId,
-                Name = productEntity.ProductName.ToUpper().Trim(),
+                Name = productEntity.ProductName,
                 Calories = productEntity.Calories,
                 Carbohydrates = productEntity.Carbohydrates,
                 Fats = productEntity.Fats,
