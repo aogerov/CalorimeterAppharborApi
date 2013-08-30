@@ -30,7 +30,7 @@ namespace A.Nutrition.WebApi.Assists
             }
 
             var keywordInDb = context.Descriptions.FirstOrDefault(d => d.KeyWord.ToLower().Trim() == keyword.ToLower().Trim());
-            int i;
+            
             if (keywordInDb == null)
             {
                 throw new ArgumentNullException("Keyword don't exists in database");
